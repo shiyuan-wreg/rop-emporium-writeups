@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# pwntools / ROP 调试产物
+*.core
+core.*
+peda-session-*.txt
+gdb.txt
+.gdb_history
+
+# ROP Emporium 原始二进制(版权原因不上传)
+ret2win/ret2win
+split/split
+callme/callme
+callme/libcallme.so
+write4/write4
+write4/libwrite4.so
+badchars/badchars
+badchars/libbadchars.so
+fluff/fluff
+fluff/libfluff.so
+pivot/pivot
+pivot/libpivot.so
+ret2csu/ret2csu
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 操作系统
+.DS_Store
+Thumbs.db
