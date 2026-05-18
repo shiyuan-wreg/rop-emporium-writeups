@@ -1,19 +1,21 @@
 # ROP Emporium Writeups
 
-> [ROP Emporium](https://ropemporium.com/) 全 8 题的解题过程与知识点记录。学习二进制安全 / 漏洞利用方向的入门练习,目标是建立 x86-64 ROP 的完整心智模型。
+> [ROP Emporium](https://ropemporium.com/) 全 8 题的解题过程与知识点记录,以及部分 [crackmes.one](https://crackmes.one/) 的 Windows crackme 分析。学习二进制安全 / 漏洞利用方向的入门练习,目标是建立 x86-64 ROP + Windows 逆向的完整心智模型。
 
 ## 关于这个仓库
 
 - **作者**: 胡智明(23 级软件工程, 金陵科技学院)
 - **学习起点**: 2026-05-09
 - **方向**: 二进制安全 / 漏洞研究 / 恶意代码分析(2026 秋招准备)
-- **进度**: 5/8 题完成
+- **进度**: ROP Emporium 6/8 + Crackme 2 题
 
 每道题独立目录,目录里有:
 - `README.md`: 知识点 + 攻击思路 + 栈布局图 + 关键细节 + 踩过的坑
-- `exploit.py`: 可直接运行的 pwntools 脚本(详细注释)
+- `exploit.py`(ROP 题): 可直接运行的 pwntools 脚本(详细注释)
 
 ## 完成进度
+
+### ROP Emporium
 
 | 题 | 难点 | 知识点 | 状态 |
 |---|---|---|---|
@@ -22,9 +24,16 @@
 | [callme](./callme/) | 链式函数调用 | 三件套 pop, 参数重置, .so 动态库 | done |
 | [write4](./write4/) | write-what-where | mov gadget, .bss 利用, 小端序 | done |
 | [badchars](./badchars/) | 字符过滤绕过 | XOR 编码, 四连 pop, 重叠 gadget, 对齐算法 | done |
-| fluff | 没有 pop rdi | xchg 系列, pext 位提取 | pending |
-| pivot | 栈翻转 | xchg rsp + 二级 ROP | pending |
+| fluff | 没有 pop rdi | xlatb + BEXTR + stosb, AL 间接控制 | done(writeup pending) |
+| pivot | 栈翻转 | xchg rsp + 二级 ROP + GOT 懒解析 | 80%(对齐卡壳) |
 | ret2csu | 用 csu_init 喂参数 | 通用 gadget chain, 万能调用器 | pending |
+
+### Crackmes(Windows PE 逆向)
+
+| 题 | 来源 | 难度 | 知识点 | 状态 |
+|---|---|---|---|---|
+| [senha](./crackmes/senha/) | crackmes.one | 1.0 | C++ std::string, x32dbg 三种 patch 方法 | done |
+| [b](./crackmes/b/) | crackmes.one | 1.0 | XOR 字符串加密, 调用栈定位 main, Patch 字节数陷阱 | done |
 
 ## 我的关键经验总结(踩坑换来的)
 
