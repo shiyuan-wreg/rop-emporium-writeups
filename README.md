@@ -24,7 +24,7 @@
 | [callme](./callme/) | 链式函数调用 | 三件套 pop, 参数重置, .so 动态库 | done |
 | [write4](./write4/) | write-what-where | mov gadget, .bss 利用, 小端序 | done |
 | [badchars](./badchars/) | 字符过滤绕过 | XOR 编码, 四连 pop, 重叠 gadget, 对齐算法 | done |
-| fluff | 没有 pop rdi | xlatb + BEXTR + stosb, AL 间接控制 | done(writeup pending) |
+| [fluff](./fluff/) | 没有 pop rdi | xlatb + BEXTR + stosb, AL 间接控制 | done |
 | pivot | 栈翻转 | xchg rsp + 二级 ROP + GOT 懒解析 | 80%(对齐卡壳) |
 | ret2csu | 用 csu_init 喂参数 | 通用 gadget chain, 万能调用器 | pending |
 
