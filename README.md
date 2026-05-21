@@ -7,7 +7,7 @@
 - **作者**: 胡智明(23 级软件工程, 金陵科技学院)
 - **学习起点**: 2026-05-09
 - **方向**: 二进制安全 / 漏洞研究 / 恶意代码分析(2026 秋招准备)
-- **进度**: ROP Emporium 6/8 + Crackme 2 题
+- **进度**: ROP Emporium 6/8 + Crackme 3 题
 
 每道题独立目录,目录里有:
 - `README.md`: 知识点 + 攻击思路 + 栈布局图 + 关键细节 + 踩过的坑
@@ -34,6 +34,7 @@
 |---|---|---|---|---|
 | [senha](./crackmes/senha/) | crackmes.one | 1.0 | C++ std::string, x32dbg 三种 patch 方法 | done |
 | [b](./crackmes/b/) | crackmes.one | 1.0 | XOR 字符串加密, 调用栈定位 main, Patch 字节数陷阱 | done |
+| [chip-8](./crackmes/chip-8/) | crackmes.one | 1.2 | .NET IL 结构, UTF-16LE 字符串, dnSpyEx 反编译 | done |
 
 ## 我的关键经验总结(踩坑换来的)
 
